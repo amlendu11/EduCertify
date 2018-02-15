@@ -1,0 +1,22 @@
+{
+  "name": "edu-certify1",
+  "version": "0.0.1",
+  "description": "Verification of education certificates",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Amlendu Bajpai",
+  "email": "bajpai.amlendu@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "latest",
+    "composer-admin": "latest",
+    "composer-client": "^0.16.3",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}

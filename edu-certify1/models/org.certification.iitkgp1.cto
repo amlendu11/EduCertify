@@ -1,0 +1,66 @@
+
+
+namespace org.certification.iitkgp1
+
+/**
+ * The types of SVA that can be used
+ */
+enum SvaType {
+  o graduation
+  o pg
+  o HigherSecondry
+  o training 
+}
+
+
+/**
+ * A user participant
+ */
+abstract participant User identified by publicKey {
+  o String publicKey
+  o String email
+  o String firstName
+  o String lastName
+  o Integer phoneNumber
+}
+
+/**
+ * A subject participant
+ */
+participant Subject extends User {
+    o String uniqueID
+}
+
+/**
+ * A Certifier participant
+ */
+participant Certifier extends User {
+  o String organizationName
+  o String uniqueID
+  
+}
+
+
+
+/**
+ * A SVA asset identifies by SvaIndex.
+ */
+asset Sva identified by svaid {
+     o String svaid
+     o String hash
+     o String certifierSignature
+     o DateTime startdate
+     o DateTime enddate
+     o SvaType svatype
+     --> Subject subject
+     --> Certifier certifier
+}
+
+/**
+ * An abstract transaction type for certification
+ */
+ transaction Certification {
+  -->Sva sva
+}
+
+
